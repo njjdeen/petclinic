@@ -21,6 +21,7 @@ steps:
     targetType: inline
     script: 
       pwd &&
-      pip install selenium &&
-      python3 selenium_test.py
+      pip install selenium ;
+      python3 selenium_test.py &&
+      echo "Selenium test SUCCEEDED"
       
