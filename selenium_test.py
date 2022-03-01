@@ -32,13 +32,21 @@ def petclinic_test():
     driver.find_element(By.NAME,"lastName").click()
     driver.find_element(By.NAME,"lastName").clear()
     driver.find_element(By.NAME,"lastName").send_keys("Deen")
-    driver.find_element(By.XPATH,"//button[@type='submit']").click()
+    #driver.find_element(By.XPATH,"//button[@type='submit']").click()
 
     #check if edit owner button works, edit and update data (name, address, city, phone number)
-    driver.find_element(By.XPATH,"//button[@type='Edit Owner']").click()
-    driver.find_element(By.ID,"firstName").click()
+    driver.find_element(By.LINK_TEXT,"Add Owner").click()
+    driver.find_element(By.ID,"firstName").clear()
+    driver.find_element(By.ID,"firstName").send_keys("Niels")
     driver.find_element(By.ID,"lastName").click()
+    driver.find_element(By.ID,"lastName").clear()
+    driver.find_element(By.ID,"lastName").send_keys("Deen")
     driver.find_element(By.ID,"address").click()
+    driver.find_element(By.ID,"address").clear()
+    driver.find_element(By.ID,"address").send_keys("Sesamstraat")
+    driver.find_element(By.ID,"city").click()
+    driver.find_element(By.ID,"city").clear()
+    driver.find_element(By.ID,"city").send_keys("Volendam")
     driver.find_element(By.ID,"telephone").click()
     driver.find_element(By.ID,"telephone").clear()
     driver.find_element(By.ID,"telephone").send_keys("042330923")
@@ -49,7 +57,6 @@ def petclinic_test():
     Select(driver.find_element(By.ID,"type")).select_by_visible_text("dog")
     driver.find_element(By.XPATH,"//option[@value='dog']").click()
     driver.find_element(By.ID,"name").click()
-    driver.find_element(By.ID,"name").clear()
 
     #find original name for new dog pet
     correct_name = False
@@ -64,12 +71,14 @@ def petclinic_test():
             i = i + 1
 
             #if it didn't work the following line will raise an exception
-            driver.find_element(By.XPATH,"(.//*[normalize-space(text()) and normalize-space(.)='mauw'])[1]/following::a[1]").click()
             correct_name = True
         except:
             print("name was already taken, trying a different name...")
     #add visit for one of the pets with description "mauw"
-    
+    driver.find_element(By.LINK_TEXT,"Add Visit").click()
+    driver.find_element(By.ID,"description").click()
+    driver.find_element(By.ID,"description").clear()
+    driver.find_element(By.ID,"description").send_keys("whoof waf")
     driver.find_element(By.XPATH,"//button[@type='submit']").click()
 
     #search for veterinarians by clicking on the corresponding tab and request a JSON file for them
