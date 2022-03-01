@@ -15,3 +15,5 @@ steps:
     mavenPomFile: 'pom.xml'
     goals: 'deploy'
     mavenOptions: '-DskipTests'
+
+- task: Bash
