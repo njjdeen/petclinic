@@ -35,7 +35,7 @@ def petclinic_test():
     driver.find_element(By.XPATH,"//button[@type='submit']").click()
 
     #check if edit owner button works, edit and update data (name, address, city, phone number)
-    driver.find_element(By.LINK_TEXT,"Edit Owner").click()
+    driver.find_element(By.XPATH,"//button[@type='Edit Owner']").click()
     driver.find_element(By.ID,"firstName").click()
     driver.find_element(By.ID,"lastName").click()
     driver.find_element(By.ID,"address").click()
