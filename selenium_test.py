@@ -14,7 +14,7 @@ options.headless = True
 
 def petclinic_test():
     #initialize driver
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome("/usr/bin/chromedriver", Options=options)
 
     driver.get("http://127.0.0.1:9999/petclinic")
 
