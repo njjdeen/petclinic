@@ -21,5 +21,6 @@ steps:
     targetType: inline
     script: 
       pwd &&
+      pip install selenium &&
       python3 selenium_test.py
       
